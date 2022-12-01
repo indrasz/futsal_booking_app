@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_menu"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="org.d3ifcool.Myfutsal.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_book"
+        android:name="org.d3ifcool.Myfutsal.ui.book.BookFragment"
+        android:label="fragment_wishlist"
+        tools:layout="@layout/fragment_book" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="org.d3ifcool.Myfutsal.ui.profile.ProfileFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

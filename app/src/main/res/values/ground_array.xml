@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ground_name_array">
+        <item>Lapangan 1</item>
+        <item>Lapangan 2</item>
+        <item>Lapangan 3</item>
+    </string-array>
+
+    <string-array name="ground_image_array">
+        <item>@drawable/img_ground</item>
+        <item>@drawable/img_ground</item>
+        <item>@drawable/img_ground</item>
+    </string-array>
+</resources>

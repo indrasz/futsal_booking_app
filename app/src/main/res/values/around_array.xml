@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="around_name_array">
+        <item>Tempat 1</item>
+        <item>Tempat 2</item>
+        <item>Tempat 3</item>
+    </string-array>
+
+    <string-array name="around_image_array">
+        <item>@drawable/img_ground</item>
+        <item>@drawable/img_ground</item>
+        <item>@drawable/img_ground</item>
+    </string-array>
+</resources>

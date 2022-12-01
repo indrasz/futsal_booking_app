@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Myfutsal</string>
+    <string name="login">login</string>
+    <string name="logout">Logout</string>
+    <string name="confirm_password">cf_b</string>
+    <string name="signed">ss</string>
+    <string name="already_have_an_account_login">ahan</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash">SPLASH</string>
+    <string name="home">Home</string>
+    <string name="book">Book</string>
+    <string name="profile">Profile</string>
+    <string name="image_ground">Image Ground</string>
+    <string name="logo">Logo</string>
+    <string name="lapangan_futsal">Lapangan Futsal</string>
+    <string name="hint_email">Masukkan Email Anda</string>
+    <string name="hint_password">Masukkan Password Anda</string>
+    <string name="around">Tempat Sekitar</string>
+    <string name="gallery">Galeri Kami</string>
+    <string name="empty_book">Empty Book</string>
+    <string name="book_now">Book Now</string>
+    <string name="subtext_empty_book">Anda belum booking Silahkan untuk booking terlebih dahulu</string>
+</resources>
