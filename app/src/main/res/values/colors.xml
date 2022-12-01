@@ -11,4 +11,7 @@
     <color name="primaryColor">#2A7065</color>
     <color name="secondaryColor">#498553</color>
     <color name="greyColor">#8D8DAA</color>
+
+    <color name="colorSnackBarError">#F72400</color>
+    <color name="colorSnackBarSuccess">#8BC34A</color>
 </resources>

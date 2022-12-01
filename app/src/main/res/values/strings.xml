@@ -33,4 +33,9 @@
     <string name="register">Daftar</string>
     <string name="sudah_punya_akun">Sudah Punya Akun?</string>
     <string name="masuk">Masuk disini</string>
+    <string name="register_success">Anda Berhasil Daftar</string>
+    <string name="hint_err_password">Password Tidak Sesuai</string>
+
+    <string name="err_msg_enter_email">Please enter email.</string>
+    <string name="err_msg_enter_password">Please enter password.</string>
 </resources>
