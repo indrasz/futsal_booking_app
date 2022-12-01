@@ -23,4 +23,14 @@
     <string name="empty_book">Empty Book</string>
     <string name="book_now">Book Now</string>
     <string name="subtext_empty_book">Anda belum booking Silahkan untuk booking terlebih dahulu</string>
+    <string name="belum_punya_akun">Belum Punya Akun?</string>
+    <string name="daftar">Daftar Disini</string>
+    <string name="name">Nama</string>
+    <string name="hint_name">Masukkan Nama Anda</string>
+    <string name="cpassword">Confirm Password</string>
+    <string name="no_whatsapp">No. Whatsapp</string>
+    <string name="hint_no_whatsapp">Msukkan No. Whatsapp Anda</string>
+    <string name="register">Daftar</string>
+    <string name="sudah_punya_akun">Sudah Punya Akun?</string>
+    <string name="masuk">Masuk disini</string>
 </resources>

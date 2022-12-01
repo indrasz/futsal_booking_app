@@ -3,7 +3,6 @@ package org.d3ifcool.Myfutsal.ui.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import org.d3ifcool.Myfutsal.R
 import org.d3ifcool.Myfutsal.databinding.ActivityLoginBinding
 import org.d3ifcool.Myfutsal.ui.MainActivity
 
@@ -19,6 +18,14 @@ class LoginActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     baseContext, MainActivity::class.java
+                )
+            )
+        }
+
+        binding.tvRegister.setOnClickListener {
+            startActivity(
+                Intent(
+                    baseContext, RegisterActivity::class.java
                 )
             )
         }
