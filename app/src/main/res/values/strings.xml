@@ -38,4 +38,37 @@
 
     <string name="err_msg_enter_email">Please enter email.</string>
     <string name="err_msg_enter_password">Please enter password.</string>
+    <string name="username">Username</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="setting">Setting</string>
+    <string name="help_center">Help Center</string>
+    <string name="services">Term Of Service</string>
+    <string name="privacy"><![CDATA[Privacy & Policy]]></string>
+    <string name="rating">Rate APP</string>
+    <string name="pilih_tanggal">Pilih Tanggal</string>
+    <string name="isi_tanggal_sewa">Isi Tanggal sewa</string>
+    <string name="pilih_jam">Pilih Jam</string>
+    <string name="pilih_jam_sewa">Pilih Jam Sewa</string>
+    <string name="pilih_lapangan">Pilih Lapangan</string>
+    <string name="pilih_lapangan_yang_akan_digunakan">Pilih lapangan yang akan digunakan</string>
+    <string name="booking">Booking</string>
+    <string name="selected_item">Selected Item</string>
+    <string name="err_msg_enter_date">Input tanggal masih kosong</string>
+    <string name="booking_success_message">Booking Telah Berhasil</string>
+    <string name="lapangan">Lapangan</string>
+    <string name="jam_booking">jam booking</string>
+    <string name="date">tanggal</string>
+    <string name="riwayat_booking">Riwayat Booking</string>
+    <string name="request_booking">Request Booking</string>
+    <string name="msg_item_removed_successfully">Anda telah membatalkan sewa lapangan</string>
+
+    <string-array name="rental_hours">
+        <item>08:00 – 09:00</item>
+        <item>09:00 – 10:00</item>
+        <item>10:00 – 11:00</item>
+        <item>11:00 – 12:00</item>
+        <item>12:00 – 13:00</item>
+        <item>13:00 – 14:00</item>
+    </string-array>
+
 </resources>

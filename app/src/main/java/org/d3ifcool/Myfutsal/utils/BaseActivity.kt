@@ -10,7 +10,6 @@ import org.d3ifcool.Myfutsal.databinding.DialogProgressBinding
 open class BaseActivity : AppCompatActivity() {
 
     private lateinit var mProgressDialog: Dialog
-    private var doubleBackToExitPressedOnce = false
     private lateinit var binding : DialogProgressBinding
 
     fun showErrorSnackBar(message : String, errorMessage: Boolean){

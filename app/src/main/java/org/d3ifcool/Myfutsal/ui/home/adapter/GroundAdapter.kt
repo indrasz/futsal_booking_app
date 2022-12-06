@@ -1,15 +1,25 @@
 package org.d3ifcool.Myfutsal.ui.home.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import org.d3ifcool.Myfutsal.data.model.Around
 import org.d3ifcool.Myfutsal.data.model.Ground
 import org.d3ifcool.Myfutsal.databinding.ItemGroundBinding
 
 class GroundAdapter
     (private var items: ArrayList<Ground>, var handler: (Ground) -> Unit)
         : RecyclerView.Adapter<GroundAdapter.PopularSearchViewHolder>() {
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setListData(data : ArrayList<Ground>){
+        items.clear()
+        items.addAll(data)
+        notifyDataSetChanged()
+
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PopularSearchViewHolder(
         ItemGroundBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )

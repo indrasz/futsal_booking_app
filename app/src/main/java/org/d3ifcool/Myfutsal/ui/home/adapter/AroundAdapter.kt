@@ -1,5 +1,6 @@
 package org.d3ifcool.Myfutsal.ui.home.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,15 @@ import org.d3ifcool.Myfutsal.databinding.ItemAroundBinding
 class AroundAdapter
     (private var items: ArrayList<Around>, var handler: (Around) -> Unit)
     : RecyclerView.Adapter<AroundAdapter.AroundViewHolder>() {
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setListData(data : ArrayList<Around>){
+        items.clear()
+        items.addAll(data)
+        notifyDataSetChanged()
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = AroundViewHolder(
         ItemAroundBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )

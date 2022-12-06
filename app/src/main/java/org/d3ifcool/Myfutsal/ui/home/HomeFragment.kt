@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import org.d3ifcool.Myfutsal.R
@@ -33,6 +34,10 @@ class HomeFragment : Fragment() {
     private lateinit var galleryAdapter: GalleryAdapter
     private val arrayOfGallery = arrayListOf<Gallery>()
 
+    private val viewModel: HomeViewModel by lazy {
+        ViewModelProvider(this)[HomeViewModel::class.java]
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,22 +50,25 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getGroundData().observe(viewLifecycleOwner) {
+            groundAdapter.setListData(it)
+        }
         displayListGround()
+
+        viewModel.getAroundData().observe(viewLifecycleOwner) {
+            aroundAdapter.setListData(it)
+        }
         displayListAround()
+
+        viewModel.getGalleryData().observe(viewLifecycleOwner) {
+            galleryAdapter.setListData(it)
+        }
         displayListGallery()
     }
 
     @SuppressLint("Recycle")
     private fun displayListGround(){
-        val imageArray = resources.obtainTypedArray(R.array.ground_image_array)
-        val nameArray = resources.getStringArray(R.array.ground_name_array)
 
-        for (i in nameArray.indices) arrayOfGround.add(
-            Ground(
-                image = imageArray.getResourceId(i, 0),
-                name = nameArray[i],
-            )
-        )
         groundAdapter = GroundAdapter(arrayOfGround) {
             Snackbar.make(
                 binding.root,
@@ -78,15 +86,6 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("Recycle")
     private fun displayListAround(){
-        val imageArray = resources.obtainTypedArray(R.array.around_image_array)
-        val nameArray = resources.getStringArray(R.array.around_name_array)
-
-        for (i in nameArray.indices) arrayOfAround.add(
-            Around(
-                image = imageArray.getResourceId(i, 0),
-                name = nameArray[i],
-            )
-        )
         aroundAdapter = AroundAdapter(arrayOfAround) {
             Snackbar.make(
                 binding.root,
@@ -104,15 +103,6 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("Recycle")
     private fun displayListGallery(){
-        val imageArray = resources.obtainTypedArray(R.array.gallery_image_array)
-        val nameArray = resources.getStringArray(R.array.gallery_name_array)
-
-        for (i in nameArray.indices) arrayOfGallery.add(
-            Gallery(
-                image = imageArray.getResourceId(i, 0),
-                name = nameArray[i],
-            )
-        )
         galleryAdapter = GalleryAdapter(arrayOfGallery) {
             Snackbar.make(
                 binding.root,

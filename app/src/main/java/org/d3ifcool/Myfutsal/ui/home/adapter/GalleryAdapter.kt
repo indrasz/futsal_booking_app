@@ -1,17 +1,27 @@
 package org.d3ifcool.Myfutsal.ui.home.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.d3ifcool.Myfutsal.data.model.Around
 import org.d3ifcool.Myfutsal.data.model.Gallery
+import org.d3ifcool.Myfutsal.data.model.Ground
 import org.d3ifcool.Myfutsal.databinding.ItemAroundBinding
 import org.d3ifcool.Myfutsal.databinding.ItemGalleryBinding
 
 class GalleryAdapter
     (private var items: ArrayList<Gallery>, var handler: (Gallery) -> Unit)
     : RecyclerView.Adapter<GalleryAdapter.GalleryViewHolder>() {
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setListData(data : ArrayList<Gallery>){
+        items.clear()
+        items.addAll(data)
+        notifyDataSetChanged()
+
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = GalleryViewHolder(
         ItemGalleryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )

@@ -4,13 +4,18 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import org.d3ifcool.Myfutsal.data.model.User
 import org.d3ifcool.Myfutsal.ui.auth.LoginActivity
 import org.d3ifcool.Myfutsal.ui.auth.RegisterActivity
+import org.d3ifcool.Myfutsal.ui.profile.ProfileFragment
 import org.d3ifcool.Myfutsal.utils.Constants
+import java.io.IOException
 
 class UserProvider {
 
@@ -92,4 +97,52 @@ class UserProvider {
                 )
             }
     }
+
+    //fungsi untuk mengambil data user dari firebase
+    fun getDataUserAccount(): LiveData<User?> {
+
+        val fragment : Fragment = ProfileFragment()
+        val userData = MutableLiveData<User>()
+
+        try {
+            mFireStore.collection(Constants.USERS)
+                .document(getCurrentUserID())
+                .get()
+                .addOnSuccessListener { document ->
+
+                    Log.i(fragment.javaClass.simpleName, document.toString())
+
+                    val user = document.toObject(User::class.java)!!
+
+                    val sharedPreferences =
+                        fragment.activity?.getSharedPreferences(
+                            Constants.MYFUTSAL_PREFERENCES,
+                            Context.MODE_PRIVATE
+                        )
+
+                    val editor = sharedPreferences?.edit()
+                    editor?.putString(
+                        Constants.LOGGED_IN_USERNAME,
+                        user.name
+                    )
+                    editor?.apply()
+
+                    userData.value = user
+
+                }
+                .addOnFailureListener { e ->
+                    Log.e(
+                        fragment.javaClass.simpleName,
+                        "Error while getting user details.",
+                        e
+                    )
+                }
+
+        } catch (e : IOException){
+            e.printStackTrace()
+        }
+
+        return userData
+    }
+
 }
